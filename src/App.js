@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from 'react';
+import Dalida  from './dalida';
+import HW from './hw';
 
-function App() {
+export default function App() {
+  const [counter,setCounter] = useState(0);
+
+  const increase = ()=>{
+    setCounter(count => count+1);
+  }
+  
+  const decrease = ()=>{
+    setCounter(count => count-1);
+  }
+
+  const reset = ()=>{
+    setCounter(count => count = 0);
+  }  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='counter'>
+      {/* <h1>Counter</h1>
+      <Dalida/>
+      <span>{counter}</span>
+      <div className='res'>
+        <div className='btn'>
 
-export default App;
+          <button onClick={increase} className='increase'>+</button>
+          <button onClick={decrease} className='decrease'>-</button>
+          <button onClick={reset} className='reset'>Reset</button>
+
+        </div>
+      </div> */}
+      <HW/>
+    </div>
+
+  );
+};
